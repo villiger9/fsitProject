@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   components: true,
+  modules: ['@pinia/nuxt'],
 
   css: ['bootstrap/dist/css/bootstrap.min.css'],
 

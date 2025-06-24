@@ -14,7 +14,8 @@
           <h3 class="text-warning">${{ product.price }}</h3>
           <p>{{ product.description }}</p>
 
-          <button class="btn btn-warning btn-lg mt-3">Add to Cart</button>
+          <button @click="addProduct(product)" class="btn btn-warning w-100 mt-2">
+            Add to Cart</button>
         </div>
       </div>
     </div>
@@ -34,4 +35,10 @@ const route = useRoute()
 const productId = route.params.id
 
 const { data: product, error, pending } = await useFetch(`https://fakestoreapi.com/products/${productId}`)
+import { useCartStore } from '@/stores/cart'
+const cart = useCartStore()
+
+function addProduct(product) {
+  cart.addToCart(product)
+}
 </script>

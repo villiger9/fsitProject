@@ -41,7 +41,19 @@
           </div>
           <i class="bi bi-person fs-5"></i>
           <i class="bi bi-heart fs-5"></i>
-          <i class="bi bi-bag fs-5"></i>
+          <div class="position-relative">
+  <NuxtLink to="/cart" class="text-dark text-decoration-none">
+    <i class="bi bi-bag fs-5"></i>
+    <span
+      v-if="cart.totalItems"
+      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+      style="font-size: 0.6rem;"
+    >
+      {{ cart.totalItems }}
+    </span>
+  </NuxtLink>
+</div>
+
         </div>
       </div>
     </div>
@@ -49,5 +61,8 @@
 </template>
 
 <script setup>
+import { useCartStore } from '@/stores/cart'
+const cart = useCartStore()
+
 const { categories, categoryToSlug, formatCategory } = await useCategories()
 </script>

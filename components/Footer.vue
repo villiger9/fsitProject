@@ -54,5 +54,6 @@
 <script setup>
 import { useCategories } from '~/composables/useCategories'
 
-const { categories, categoryToSlug, formatCategory } = useCategories()
+const { categories, categoryToSlug, formatCategory } = await useCategories()
 </script>
+

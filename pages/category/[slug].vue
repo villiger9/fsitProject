@@ -47,7 +47,8 @@
                 <h5 class="card-title text-truncate">{{ product.title }}</h5>
                 <p class="card-text text-muted">${{ product.price }}</p>
               </div>
-              <button class="btn btn-warning w-100 mt-2">Add to Cart</button>
+              <button @click="addProduct(product)" class="btn btn-warning w-100 mt-2">
+                Add to Cart</button>
             </div>
           </div>
         </div>

@@ -46,7 +46,7 @@
                   <h5 class="card-title text-truncate">{{ product.title }}</h5>
                   <p class="card-text text-muted">${{ product.price }}</p>
                 </div>
-                <button class="btn btn-warning w-100 mt-2" @click.stop.prevent>
+                <button @click="addProduct(product)" class="btn btn-warning w-100 mt-2">
                   Add to Cart
                 </button>
               </div>
@@ -121,7 +121,7 @@
                   <h5 class="card-title text-truncate">{{ item.title }}</h5>
                   <p class="card-text text-muted">${{ item.price }}</p>
                 </div>
-                <button class="btn btn-warning w-100 mt-2" @click.stop.prevent>
+                <button @click="addProduct(product)" class="btn btn-warning w-100 mt-2">
                   Add to Cart
                 </button>
               </div>
@@ -212,5 +212,12 @@ const scrollLeftNew = () => {
     const cardWidth = scrollContainerNew.value.querySelector('div')?.offsetWidth || 250
     scrollContainerNew.value.scrollLeft -= cardWidth
   }
+}
+
+import { useCartStore } from '@/stores/cart'
+const cart = useCartStore()
+
+function addProduct(product) {
+  cart.addToCart(product)
 }
 </script>
