@@ -1,15 +1,39 @@
 <template>
-  <!-- Hero Section -->
-  <section
-    class="py-5 text-center text-white"
-    style="background-image: url('/jewelry-banner.jpg'); background-size: cover; background-position: center;"
+
+<section
+  class="position-relative"
+  style="background-image: url('/electronics-banner.jpg'); background-size: cover; background-position: center; height: 450px;"
+>
+  <div
+    class="position-absolute bottom-0 start-0 p-4"
+    style="max-width: 300px;"
   >
-    <div class="bg-dark bg-opacity-50 p-5">
-      <h2 class="display-5 fw-bold">Discover Elegant Jewelry</h2>
-      <p class="lead">Handpicked pieces to elevate your style.</p>
-      <button class="btn btn-outline-light btn-lg mt-3">Explore Jewelry</button>
-    </div>
-  </section>
+    <h2 class="fw-bold text-dark mb-2">Explore Cutting-Edge Electronics</h2>
+    <p class="text-dark small mb-3">
+      Stay ahead with the latest gadgets, smart devices, and tech essentials designed to make life easier and more fun.
+    </p>
+    <NuxtLink
+      to="/category/electronics"
+      class="btn btn-outline-dark btn-lg d-inline-flex align-items-center gap-2"
+    >
+      See More <i class="bi bi-arrow-right"></i>
+    </NuxtLink>
+  </div>
+</section>
+
+  <section
+  class="position-relative"
+  style="background-image: url('/jewelry-banner.jpg'); background-size: cover; background-position: center; height: 450px;"
+>
+  <div class="position-absolute bottom-0 start-0 m-4">
+    <NuxtLink
+      to="/category/jewelery"
+      class="btn btn-outline-light btn-lg d-flex align-items-center gap-2"
+    >
+      See More <i class="bi bi-arrow-right"></i>
+    </NuxtLink>
+  </div>
+</section>
 
   <!-- Special Offers -->
   <section class="py-5 position-relative">
@@ -76,13 +100,9 @@
   <!-- Urban Style Banner -->
   <section
     class="py-5 text-center text-white"
-    style="background-image: url('/urban-style.jpg'); background-size: cover; background-position: center;"
+    style="background-image: url('/urban-style.jpg'); background-size: cover; background-position: center; height: 450px;"
   >
-    <div class="bg-dark bg-opacity-50 p-5">
-      <h2 class="display-5 fw-bold">Urban Style</h2>
-      <p class="lead">Streetwear meets elegance. Discover the latest trends.</p>
-      <button class="btn btn-outline-light btn-lg mt-3">Shop the Look</button>
-    </div>
+    
   </section>
 
   <!-- New Arrivals -->
@@ -121,7 +141,7 @@
                   <h5 class="card-title text-truncate">{{ item.title }}</h5>
                   <p class="card-text text-muted">${{ item.price }}</p>
                 </div>
-                <button @click="addProduct(product)" class="btn btn-warning w-100 mt-2">
+                <button @click="addProduct(item)" class="btn btn-warning w-100 mt-2">
                   Add to Cart
                 </button>
               </div>
@@ -148,25 +168,25 @@
     </div>
   </section>
 
-  <!-- Subscription Section -->
-  <section class="py-5 text-center text-dark" style="background-color: #ffc107;">
-    <div class="container">
-      <h2 class="display-6 fw-bold mb-3">Join Our Membership</h2>
-      <p class="lead mb-4">Get exclusive deals, new arrivals, and style tips directly to your inbox.</p>
-      <form class="row justify-content-center g-2">
-        <div class="col-12 col-md-6">
-          <input
-            type="email"
-            class="form-control form-control-lg"
-            placeholder="Enter your email"
-          />
-        </div>
-        <div class="col-auto">
-          <button type="submit" class="btn btn-dark btn-lg">Subscribe</button>
-        </div>
-      </form>
+<!-- Membership Section -->
+<section class="py-5 text-dark" style="background-color: #ffc107;">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-md-auto mb-3 mb-md-0">
+        <h2 class="display-6 fw-bold mb-0">BECOME A MEMBER & GET 15% OFF</h2>
+      </div>
+      <div class="col-md-auto">
+        <NuxtLink
+          to="/signup"
+          class="btn btn-dark btn-lg d-inline-flex align-items-center gap-2"
+        >
+          SIGN UP FOR FREE <i class="bi bi-arrow-right"></i>
+        </NuxtLink>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 </template>
 
 <script setup>

@@ -31,8 +31,9 @@
                 <h5 class="card-title text-truncate">{{ product.title }}</h5>
                 <p class="text-muted">${{ product.price }}</p>
               </div>
-              <!-- Optional: You can keep or remove the button if the whole card is clickable -->
-              <button class="btn btn-warning w-100 mt-2" @click.stop.prevent>View Details</button>
+              <button @click="addProduct(product)" class="btn btn-warning w-100 mt-2">
+                Add to Cart
+              </button>
             </div>
           </div>
         </NuxtLink>
@@ -84,5 +85,12 @@ const scrollLeft = () => {
     const cardWidth = scrollContainer.value.querySelector('div')?.offsetWidth || 250
     scrollContainer.value.scrollLeft -= cardWidth
   }
+}
+
+import { useCartStore } from '@/stores/cart'
+const cart = useCartStore()
+
+function addProduct(product) {
+  cart.addToCart(product)
 }
 </script>
