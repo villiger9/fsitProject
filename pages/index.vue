@@ -1,14 +1,15 @@
 <template>
   <!-- Electronics Banner -->
-  <section
-    class="position-relative"
-    style="background-image: url('/electronics-banner.jpg'); background-size: cover; background-position: center; height: 450px;"
-  >
-    <div class="position-absolute bottom-0 start-0 p-4" style="max-width: 300px;">
-      <h2 class="fw-bold text-dark mb-2">Explore Cutting-Edge Electronics</h2>
-      <p class="text-dark small mb-3">
-        Stay ahead with the latest gadgets, smart devices, and tech essentials designed to make life easier and more fun.
-      </p>
+  <section class="banner-section electronics-banner position-relative text-dark">
+    <div class="banner-content p-4">
+      <!-- Desktop text only -->
+      <div class="desktop-text d-none d-md-block">
+        <h2 class="fw-bold mb-2">Explore Cutting-Edge Electronics</h2>
+        <p class="small mb-3">
+          Stay ahead with the latest gadgets, smart devices, and tech essentials designed to make life easier and more fun.
+        </p>
+      </div>
+      <!-- Button visible always -->
       <NuxtLink
         to="/category/electronics"
         class="btn btn-outline-dark btn-lg d-inline-flex align-items-center gap-2"
@@ -19,14 +20,17 @@
   </section>
 
   <!-- Jewelry Banner -->
-  <section
-    class="position-relative"
-    style="background-image: url('/jewelry-banner.jpg'); background-size: cover; background-position: center; height: 450px;"
-  >
-    <div class="position-absolute bottom-0 start-0 m-4">
+  <section class="banner-section jewelry-banner position-relative text-white">
+    <div class="banner-content p-4">
+      <!-- Desktop text only -->
+      <div class="desktop-text d-none d-md-block">
+        <!-- <h2 class="fw-bold mb-2">Elegant Jewelry</h2> -->
+        <p class="small mb-3">Handpicked pieces to elevate your everyday look.</p>
+      </div>
+      <!-- Button visible always -->
       <NuxtLink
         to="/category/jewelery"
-        class="btn btn-outline-light btn-lg d-flex align-items-center gap-2"
+        class="btn btn-outline-light btn-lg d-inline-flex align-items-center gap-2"
       >
         See More <i class="bi bi-arrow-right"></i>
       </NuxtLink>
@@ -74,7 +78,9 @@
   </section>
 
   <!-- Urban Style Banner -->
-  <section class="py-5 text-center text-white" style="background-image: url('/urban-style.jpg'); background-size: cover; background-position: center; height: 450px;"></section>
+  <section class="urban-banner text-center text-white">
+    <!-- Optionally add heading/text inside if needed -->
+  </section>
 
   <!-- New Arrivals -->
   <section class="py-5 position-relative">
@@ -191,7 +197,7 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
+<style>
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -204,5 +210,71 @@ onMounted(() => {
 .scroll-wrapper {
   overflow-y
   : hidden;
+}
+
+/* Banner base styles */
+.banner-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 450px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.electronics-banner {
+  background-image: url('/electronics-banner.jpg');
+  color: #000;
+}
+
+.jewelry-banner {
+  background-image: url('/jewelry-banner.jpg');
+  color: #fff;
+}
+
+.urban-banner {
+  background-image: url('/urban-style.jpg');
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Banner content */
+.banner-content {
+  max-width: 300px;
+  margin: 1rem;
+}
+
+/* Hide text on mobile but keep button */
+@media (max-width: 768px) {
+  .desktop-text {
+    display: none !important;
+  }
+
+  /* Make banners responsive and keep images */
+  .banner-section {
+    height: auto;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    padding: 3rem 1rem 2rem;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* For urban banner, add some vertical padding */
+  .urban-banner {
+    padding: 4rem 1rem;
+    height: auto;
+  }
+
+  .banner-content {
+    max-width: 100%;
+  }
 }
 </style>
