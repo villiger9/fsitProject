@@ -1,13 +1,14 @@
 <template>
   <header class="border-bottom">
-    <!-- Top black bar (optional) -->
     <div class="bg-black py-1"></div>
 
     <!-- Main header section -->
     <div class="container py-3 d-flex flex-column flex-md-row align-items-center justify-content-between">
       <!-- Left: Logo -->
       <div class="text-center text-md-start mb-3 mb-md-0">
-        <img src="/logo.png" alt="Logo" style="height: 7em" class="mb-1" />
+        <NuxtLink to="/">
+          <img src="/logo.png" alt="Logo" style="height: 7em" class="mb-1" />
+        </NuxtLink>
       </div>
 
       <!-- Center: Category Navigation -->
@@ -27,10 +28,9 @@
         <!-- Top links -->
         <div class="d-flex gap-3 small">
           <NuxtLink to="/" class="text-dark text-decoration-none">Home</NuxtLink>
-<NuxtLink to="/about" class="text-dark text-decoration-none">About Us</NuxtLink>
-<NuxtLink to="/media-center" class="text-dark text-decoration-none">Media Center</NuxtLink>
-<NuxtLink to="/contact" class="text-dark text-decoration-none">Contact Us</NuxtLink>
-
+          <NuxtLink to="/about" class="text-dark text-decoration-none">About Us</NuxtLink>
+          <NuxtLink to="/media-center" class="text-dark text-decoration-none">Media Center</NuxtLink>
+          <NuxtLink to="/contact" class="text-dark text-decoration-none">Contact Us</NuxtLink>
         </div>
 
         <!-- Search + Icons -->
@@ -39,21 +39,20 @@
             <input type="text" placeholder="Search" class="border-0 bg-transparent" />
             <i class="bi bi-search"></i>
           </div>
-          <i class="bi bi-person fs-5"></i>
-          <i class="bi bi-heart fs-5"></i>
+        <i class="bi bi-person fs-5"></i>
+        <i class="bi bi-heart fs-5"></i>
           <div class="position-relative">
-  <NuxtLink to="/cart" class="text-dark text-decoration-none">
-    <i class="bi bi-bag fs-5"></i>
-    <span
-      v-if="cart.totalItems"
-      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-      style="font-size: 0.6rem;"
-    >
-      {{ cart.totalItems }}
-    </span>
-  </NuxtLink>
-</div>
-
+              <NuxtLink to="/cart" class="text-dark text-decoration-none">
+              <i class="bi bi-bag fs-5"></i>
+              <span
+                v-if="cart.totalItems"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                style="font-size: 0.6rem;"
+              >
+                {{ cart.totalItems }}
+              </span>
+            </NuxtLink>
+          </div>
         </div>
       </div>
     </div>
@@ -63,6 +62,5 @@
 <script setup>
 import { useCartStore } from '@/stores/cart'
 const cart = useCartStore()
-
 const { categories, categoryToSlug, formatCategory } = await useCategories()
 </script>

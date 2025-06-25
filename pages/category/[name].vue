@@ -1,11 +1,27 @@
 <template>
-  <div class="container py-5">
+  <div class="container py-5 position-relative">
     <h2 class="mb-4 text-center text-capitalize">{{ categoryName }}</h2>
+
+    <!-- Scroll Buttons -->
+    <button
+      class="btn btn-dark position-absolute top-50 start-0 translate-middle-y"
+      @click="scrollLeft"
+      style="z-index: 10;"
+    >
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button
+      class="btn btn-dark position-absolute top-50 end-0 translate-middle-y"
+      @click="scrollRight"
+      style="z-index: 10;"
+    >
+      <i class="bi bi-chevron-right"></i>
+    </button>
 
     <!-- Scrollable container -->
     <div
       ref="scrollContainer"
-      class="d-flex overflow-hidden position-relative"
+      class="d-flex overflow-hidden"
       style="scroll-behavior: smooth;"
     >
       <div
@@ -38,25 +54,10 @@
           </div>
         </NuxtLink>
       </div>
-
-      <!-- Scroll Buttons -->
-      <button
-        class="btn btn-dark position-absolute top-50 start-0 translate-middle-y"
-        @click="scrollLeft"
-        style="z-index: 10;"
-      >
-        <i class="bi bi-chevron-left"></i>
-      </button>
-      <button
-        class="btn btn-dark position-absolute top-50 end-0 translate-middle-y"
-        @click="scrollRight"
-        style="z-index: 10;"
-      >
-        <i class="bi bi-chevron-right"></i>
-      </button>
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { ref, computed } from 'vue'
