@@ -24,7 +24,6 @@
     <div class="banner-content p-4">
       <!-- Desktop text only -->
       <div class="desktop-text d-none d-md-block">
-        <!-- <h2 class="fw-bold mb-2">Elegant Jewelry</h2> -->
         <p class="small mb-3">Handpicked pieces to elevate your everyday look.</p>
       </div>
       <!-- Button visible always -->
@@ -37,7 +36,7 @@
     </div>
   </section>
 
-  <!-- Special Offers -->
+  <!-- Special Offers / Items with price < 50 -->
   <section class="py-5 position-relative">
     <div class="container position-relative">
       <h2 class="mb-4 text-center">Special Offers</h2>
@@ -79,10 +78,9 @@
 
   <!-- Urban Style Banner -->
   <section class="urban-banner text-center text-white">
-    <!-- Optionally add heading/text inside if needed -->
   </section>
 
-  <!-- New Arrivals -->
+  <!-- New Arrivals / Items with rating < 3.5 -->
   <section class="py-5 position-relative">
     <div class="container position-relative">
       <h2 class="mb-4 text-center">New Arrivals</h2>
@@ -244,19 +242,16 @@ onMounted(() => {
   align-items: center;
 }
 
-/* Banner content */
 .banner-content {
   max-width: 300px;
   margin: 1rem;
 }
 
-/* Hide text on mobile but keep button */
 @media (max-width: 768px) {
   .desktop-text {
     display: none !important;
   }
 
-  /* Make banners responsive and keep images */
   .banner-section {
     height: auto;
     background-size: contain !important;
@@ -267,7 +262,6 @@ onMounted(() => {
     text-align: center !important;
   }
 
-  /* For urban banner, add some vertical padding */
   .urban-banner {
     padding: 4rem 1rem;
     height: auto;

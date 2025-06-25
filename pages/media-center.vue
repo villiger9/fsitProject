@@ -3,7 +3,6 @@
     <h1>Media Center</h1>
     <p>Find our social media links below</p>
 
-    <!-- Social Icons -->
     <div class="d-flex justify-content-center gap-4 mt-4 social-icons">
       <a href="https://facebook.com" target="_blank" class="text-dark fs-1">
         <i class="bi bi-facebook"></i>

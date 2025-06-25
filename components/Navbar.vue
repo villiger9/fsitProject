@@ -74,28 +74,28 @@
       </div>
 
       <!-- Mobile Collapse: Site Links -->
-<div class="collapse d-md-none mt-3" id="siteLinks">
-  <div class="d-flex flex-column gap-2 text-uppercase fs-6">
-    <NuxtLink to="/" class="text-dark text-decoration-none">Home</NuxtLink>
-    <NuxtLink to="/about" class="text-dark text-decoration-none">About Us</NuxtLink>
-    <NuxtLink to="/media-center" class="text-dark text-decoration-none">Media Center</NuxtLink>
-    <NuxtLink to="/contact" class="text-dark text-decoration-none">Contact Us</NuxtLink>
-  </div>
-</div>
+      <div class="collapse d-md-none mt-3" id="siteLinks">
+        <div class="d-flex flex-column gap-2 text-uppercase fs-6">
+          <NuxtLink to="/" class="text-dark text-decoration-none">Home</NuxtLink>
+          <NuxtLink to="/about" class="text-dark text-decoration-none">About Us</NuxtLink>
+          <NuxtLink to="/media-center" class="text-dark text-decoration-none">Media Center</NuxtLink>
+          <NuxtLink to="/contact" class="text-dark text-decoration-none">Contact Us</NuxtLink>
+        </div>
+      </div>
 
-<!-- Mobile Collapse: Categories -->
-<div class="collapse d-md-none mt-3" id="categories">
-  <div class="d-flex flex-column gap-2 text-uppercase fs-6">
-    <NuxtLink
-      v-for="category in categories"
-      :key="category"
-      :to="`/category/${categoryToSlug(category)}`"
-      class="text-dark text-decoration-none"
-    >
-      {{ formatCategory(category) }}
-    </NuxtLink>
-  </div>
-</div>
+      <!-- Mobile Collapse: Categories -->
+      <div class="collapse d-md-none mt-3" id="categories">
+        <div class="d-flex flex-column gap-2 text-uppercase fs-6">
+          <NuxtLink
+            v-for="category in categories"
+            :key="category"
+            :to="`/category/${categoryToSlug(category)}`"
+            class="text-dark text-decoration-none"
+          >
+            {{ formatCategory(category) }}
+          </NuxtLink>
+        </div>
+      </div>
 
     </div>
   </header>
